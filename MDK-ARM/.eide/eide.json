@@ -1,0 +1,246 @@
+{
+  "name": "boot_loader",
+  "type": "ARM",
+  "dependenceList": [],
+  "srcDirs": [
+    ".eide/deps"
+  ],
+  "virtualFolder": {
+    "name": "<virtual_root>",
+    "files": [],
+    "folders": [
+      {
+        "name": "::CMSIS",
+        "files": [],
+        "folders": []
+      },
+      {
+        "name": "Application",
+        "files": [],
+        "folders": [
+          {
+            "name": "MDK-ARM",
+            "files": [
+              {
+                "path": "startup_stm32f103xe.s"
+              }
+            ],
+            "folders": []
+          },
+          {
+            "name": "User",
+            "files": [
+              {
+                "path": "../Src/bsp_driver_sd.c"
+              },
+              {
+                "path": "../Src/fatfs.c"
+              },
+              {
+                "path": "../Src/main.c"
+              },
+              {
+                "path": "../Src/main1.c"
+              },
+              {
+                "path": "../Src/stm32f1xx_hal_msp.c"
+              },
+              {
+                "path": "../Src/stm32f1xx_it.c"
+              }
+            ],
+            "folders": []
+          }
+        ]
+      },
+      {
+        "name": "Drivers",
+        "files": [],
+        "folders": [
+          {
+            "name": "CMSIS",
+            "files": [
+              {
+                "path": "../Src/system_stm32f1xx.c"
+              }
+            ],
+            "folders": []
+          },
+          {
+            "name": "STM32F1xx_HAL_Driver",
+            "files": [
+              {
+                "path": "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c"
+              },
+              {
+                "path": "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c"
+              },
+              {
+                "path": "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c"
+              },
+              {
+                "path": "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c"
+              },
+              {
+                "path": "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c"
+              },
+              {
+                "path": "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c"
+              },
+              {
+                "path": "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c"
+              },
+              {
+                "path": "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c"
+              },
+              {
+                "path": "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c"
+              },
+              {
+                "path": "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_sd.c"
+              },
+              {
+                "path": "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c"
+              },
+              {
+                "path": "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c"
+              },
+              {
+                "path": "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c"
+              },
+              {
+                "path": "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c"
+              },
+              {
+                "path": "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_sdmmc.c"
+              }
+            ],
+            "folders": []
+          }
+        ]
+      },
+      {
+        "name": "Middlewares",
+        "files": [],
+        "folders": [
+          {
+            "name": "FatFs",
+            "files": [
+              {
+                "path": "../Middlewares/Third_Party/FatFs/src/diskio.c"
+              },
+              {
+                "path": "../Middlewares/Third_Party/FatFs/src/drivers/sd_diskio.c"
+              },
+              {
+                "path": "../Middlewares/Third_Party/FatFs/src/ff_gen_drv.c"
+              },
+              {
+                "path": "../Middlewares/Third_Party/FatFs/src/ff.c"
+              },
+              {
+                "path": "../Middlewares/Third_Party/FatFs/src/option/ccsbcs.c"
+              },
+              {
+                "path": "../Middlewares/Third_Party/FatFs/src/option/syscall.c"
+              }
+            ],
+            "folders": []
+          }
+        ]
+      }
+    ]
+  },
+  "outDir": "build",
+  "deviceName": null,
+  "packDir": ".pack/Keil/STM32F1xx_DFP.2.3.0",
+  "miscInfo": {
+    "uid": "b836b6c2d9f2f2479b0bb14d06890d1c"
+  },
+  "targets": {
+    "boot_loader": {
+      "excludeList": [],
+      "toolchain": "AC6",
+      "compileConfig": {
+        "cpuType": "Cortex-M3",
+        "floatingPointHardware": "none",
+        "useCustomScatterFile": false,
+        "scatterFilePath": "<YOUR_SCATTER_FILE>.sct",
+        "storageLayout": {
+          "RAM": [
+            {
+              "tag": "IRAM",
+              "id": 1,
+              "mem": {
+                "startAddr": "0x20000000",
+                "size": "0x5000"
+              },
+              "isChecked": true,
+              "noInit": false
+            }
+          ],
+          "ROM": [
+            {
+              "tag": "IROM",
+              "id": 1,
+              "mem": {
+                "startAddr": "0x08000000",
+                "size": "0x10000"
+              },
+              "isChecked": true,
+              "isStartup": true
+            }
+          ]
+        },
+        "options": "null"
+      },
+      "uploader": "STLink",
+      "uploadConfig": {
+        "bin": "",
+        "proType": "SWD",
+        "resetMode": "default",
+        "runAfterProgram": true,
+        "speed": 4000,
+        "address": "0x08000000",
+        "elFile": "None",
+        "optionBytes": ".eide/boot_loader.st.option.bytes.ini",
+        "otherCmds": ""
+      },
+      "uploadConfigMap": {
+        "JLink": {
+          "bin": "",
+          "baseAddr": "",
+          "cpuInfo": {
+            "vendor": "null",
+            "cpuName": "null"
+          },
+          "proType": 1,
+          "speed": 8000,
+          "otherCmds": ""
+        }
+      },
+      "custom_dep": {
+        "name": "default",
+        "incList": [
+          "../Inc",
+          "../Drivers/STM32F1xx_HAL_Driver/Inc",
+          "../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy",
+          "../Drivers/CMSIS/Device/ST/STM32F1xx/Include",
+          "../Drivers/CMSIS/Include",
+          "../Middlewares/Third_Party/FatFs/src",
+          "../Middlewares/Third_Party/FatFs/src/drivers",
+          ".cmsis/include",
+          "RTE/_boot_loader",
+          ".eide/deps"
+        ],
+        "libList": [],
+        "sourceDirList": [],
+        "defineList": [
+          "USE_HAL_DRIVER",
+          "STM32F103xE"
+        ]
+      }
+    }
+  },
+  "version": "3.3"
+}
